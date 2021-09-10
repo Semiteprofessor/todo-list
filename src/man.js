@@ -8,6 +8,7 @@ const Man = (props) => {
       <>
           <div key={manchester.id}>
               <h1>{manchester.name}</h1>
+              <h1>{manchester.age}</h1>
           </div>
       </>
   )}

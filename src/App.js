@@ -5,9 +5,9 @@ export default class App extends Component {
 
   state = {
     manchester: [
-      {name: "Cristiano Ronaldo", id: 1},
-      {name: "Edinson Cavani", id: 2},
-      {name: "Jadon Sancho", id: 3}
+      {name: "Cristiano Ronaldo", age: 36, id: 1},
+      {name: "Edinson Cavani", age: 34, id: 2},
+      {name: "Jadon Sancho", age: 21, id: 3}
     ]
   }
 
