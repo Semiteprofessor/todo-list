@@ -5,7 +5,7 @@ import AddForm from './components/addform'
 export default class App extends Component {
 
   state = {
-    manchester: [
+    manchesters: [
       {name: "Cristiano Ronaldo", age: 36, position: "Winger", id: 1},
       {name: "Edinson Cavani", age: 34, position: "Striker", id: 2},
       {name: "Jadon Sancho", age: 21, position: "Winger", id: 3},
@@ -17,22 +17,24 @@ export default class App extends Component {
     ]
   }
 
-
-  // handleChange = (e) => {
-  //   this.setState({
-  //     name: e.target.value
-  //   })
-  // }
-  // handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   console.log("form submited successfully ", this.state.name);
-  // }
+  addForm = (manchester) => {
+    manchester.id = Math.random();
+    let manchesters = [...this.state.manchesters, manchester];
+    this.setState({
+      manchesters: manchesters
+    })
+  }
+  deleteManchester = (id) => {
+    let manchester = this.state.manchesters.filter(manchester => {
+      return manchester.id !== id
+    })
+  }
 
   render() {
     return (
       <div className="App">
-        <Man manchester={this.state.manchester} />
-        <AddForm />
+        <Man manchester={this.state.manchesters} deleteManchester={this.deleteManchester} />
+        <AddForm addForm={this.addForm} />
       </div>
     )
   }
