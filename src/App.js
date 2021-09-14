@@ -12,8 +12,8 @@ export default class App extends Component {
       {name: "Mason Greenwood", age: 19, position: "Winger", id: 4},
       {name: "Paul Pogba", age: 28, position: "Midfielder", id: 5},
       {name: "Bruno Fernandes", age: 27, position: "Midfielder", id: 6},
-      {name: "Rafael Varane", age: 28, position: "Defender", id: 6},
-      {name: "David De Gea", age: 31, position: "Goalkeeper", id: 6}
+      {name: "Rafael Varane", age: 28, position: "Defender", id: 7},
+      {name: "David De Gea", age: 31, position: "Goalkeeper", id: 8}
     ]
   }
 
@@ -25,11 +25,21 @@ export default class App extends Component {
     })
   }
   deleteManchester = (id) => {
-    let manchester = this.state.manchesters.filter(manchester => {
+    let manchesters = this.state.manchesters.filter(manchester => {
       return manchester.id !== id
+    });
+    this.setState({
+      manchesters: manchesters
     })
   }
 
+  componentDidMount() {
+    console.log("Component mounted");
+  }
+  componentDidUpdate(prevProps, prevState) {
+    console.log("Component updated");
+    console.log(prevProps, prevState);
+  }
   render() {
     return (
       <div className="App">
